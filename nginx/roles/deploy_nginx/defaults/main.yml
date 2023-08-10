@@ -1,0 +1,21 @@
+---
+# defaults file for deploy_nginx
+
+nginx_selinux: false
+nginx_selinux_enforcing: true
+nginx_service_overridepath: /etc/systemd/system/nginx.service.d
+nginx_service_overridefilename: override.conf
+nginx_start: true
+nginx_setup: install
+nginx_logrotate_conf_enable: true
+nginx_logrotate_conf:
+  paths:
+    - /var/log/nginx/*.log
+  options:
+    - daily
+    - missingok
+    - rotate 14
+    - compress
+    - delaycompress
+    - notifempty
+    - sharedscripts

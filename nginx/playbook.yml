@@ -1,0 +1,9 @@
+---
+
+- name: Install ngix
+  hosts: server_nginx
+
+  become: yes
+
+  roles:
+    - {role: deploy_nginx}
